@@ -1,256 +1,93 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub AI 热榜 — 2026-03-03</title>
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script data-goatcounter="https://ai-trending.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<style>
-  :root {
-    --bg: #f6f8fa;
-    --fg: #1f2328;
-    --muted: #656d76;
-    --card: #ffffff;
-    --border: #d0d7de;
-    --accent: #0969da;
-    --accent2: #1f883d;
-    --danger: #cf222e;
-    --warning: #9a6700;
-    --shadow: 0 1px 3px rgba(31,35,40,0.08);
-    --shadow-lg: 0 8px 24px rgba(31,35,40,0.12);
-    --radius: 12px;
-    --radius-sm: 8px;
-    --maxw: 980px;
-  }
-  [data-theme="dark"] {
-    --bg: #0d1117;
-    --fg: #c9d1d9;
-    --muted: #8b949e;
-    --card: #161b22;
-    --border: #30363d;
-    --accent: #58a6ff;
-    --accent2: #3fb950;
-    --danger: #f85149;
-    --warning: #d29922;
-    --shadow: 0 1px 3px rgba(0,0,0,0.4);
-    --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    background: var(--bg); color: var(--fg); line-height: 1.6;
-    transition: background .25s, color .25s;
-  }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
-  nav {
-    padding: 14px 20px; border-bottom: 1px solid var(--border); background: var(--card);
-    display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 10;
-    box-shadow: var(--shadow);
-  }
-  nav .back { font-size: .9rem; font-weight: 600; }
-  nav .date { margin-left: auto; font-size: .85rem; color: var(--muted); }
-  .theme-toggle {
-    background: var(--card); border: 1px solid var(--border); color: var(--fg);
-    border-radius: 999px; padding: 5px 12px; cursor: pointer; font-size: .8rem;
-  }
-  .theme-toggle:hover { border-color: var(--accent); }
-  header.report-header {
-    text-align: center; padding: 40px 20px 24px;
-  }
-  header.report-header h1 { font-size: 1.7rem; font-weight: 800; }
-  header.report-header .meta { color: var(--muted); font-size: .9rem; margin-top: 6px; }
-  .section-title {
-    font-size: 1.15rem; font-weight: 700; margin: 28px 0 12px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  table {
-    width: 100%; border-collapse: collapse; background: var(--card);
-    border: 1px solid var(--border); border-radius: var(--radius-sm);
-    overflow: hidden; box-shadow: var(--shadow); font-size: .92rem;
-  }
-  thead { background: rgba(9,105,218,.06); }
-  [data-theme="dark"] thead { background: rgba(88,166,255,.08); }
-  th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
-  th { font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .4px; color: var(--muted); }
-  tr:last-child td { border-bottom: none; }
-  tr:hover td { background: rgba(9,105,218,.03); }
-  [data-theme="dark"] tr:hover td { background: rgba(88,166,255,.05); }
-  .rank { font-weight: 700; color: var(--accent); width: 44px; text-align: center; }
-  .stars { font-weight: 600; color: var(--accent2); white-space: nowrap; }
-  .total { color: var(--muted); white-space: nowrap; }
-  .repo a { font-weight: 600; }
-  .repo .desc { font-size: .82rem; color: var(--muted); }
-  .insights {
-    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm);
-    padding: 20px; box-shadow: var(--shadow); margin: 28px 0;
-  }
-  .insights h3 { font-size: 1.05rem; margin-bottom: 10px; }
-  .insights p { font-size: .92rem; color: var(--muted); line-height: 1.7; }
-  .counter { text-align: center; padding: 16px; font-size: .85rem; color: var(--muted); }
-  footer {
-    text-align: center; padding: 28px 20px; color: var(--muted); font-size: .8rem;
-    border-top: 1px solid var(--border); margin-top: 12px;
-  }
-  @media (max-width: 640px) {
-    th, td { padding: 8px 10px; font-size: .85rem; }
-    .repo .desc { display: none; }
-    header.report-header h1 { font-size: 1.3rem; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub AI 热榜 2026-03-03 | AI Trending</title>
+  <script data-goatcounter="https://daniel-hwang.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <style>
+    :root { --bg: #0f172a; --bg-card: #1e293b; --text: #f8fafc; --text-secondary: #94a3b8; --accent: #38bdf8; --accent-2: #818cf8; --border: #334155; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-bottom: 1px solid var(--border); padding: 30px 0; }
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .nav a { color: var(--accent); text-decoration: none; font-size: 0.95rem; }
+    .nav a:hover { text-decoration: underline; }
+    .logo { font-size: 1.5rem; font-weight: 700; background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    h1 { font-size: 2rem; margin-top: 10px; }
+    .subtitle { color: var(--text-secondary); margin-top: 8px; }
+    main { padding: 40px 0; }
+    .section { margin-bottom: 40px; }
+    .section-title { font-size: 1.4rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    table { width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+    th, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: rgba(56, 189, 248, 0.1); color: var(--accent); font-weight: 600; }
+    tr:hover { background: rgba(255,255,255,0.03); }
+    .rank { font-weight: 700; color: var(--accent); width: 50px; }
+    .project-name { font-weight: 600; }
+    .project-name a { color: var(--text); text-decoration: none; }
+    .project-name a:hover { color: var(--accent); }
+    .stars { color: #fbbf24; font-weight: 600; white-space: nowrap; }
+    .desc { color: var(--text-secondary); font-size: 0.9rem; }
+    .insights { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+    .insights ul { list-style: none; }
+    .insights li { padding: 10px 0; border-bottom: 1px solid var(--border); }
+    .insights li:last-child { border-bottom: none; }
+    .insights strong { color: var(--accent); }
+    footer { border-top: 1px solid var(--border); padding: 30px 0; text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
+    .stats-bar { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+    @media (max-width: 768px) { h1 { font-size: 1.5rem; } table { font-size: 0.85rem; } th, td { padding: 10px; } }
+  </style>
 </head>
 <body>
-<nav>
-  <a class="back" href="../index.html">← 返回门户首页</a>
-  <span class="date">2026-03-03（周二）</span>
-  <button class="theme-toggle" id="themeBtn">🌓</button>
-</nav>
-
-<div class="container">
-  <header class="report-header">
-    <h1>🔥 GitHub AI 热榜 Top10 — 2026-03-03</h1>
-    <div class="meta">
-      页面浏览 <span id="busuanzi_value_page_pv">--</span> 次
+  <header>
+    <div class="container">
+      <div class="nav"><div class="logo">🔥 AI Trending</div><a href="../index.html">← 返回首页</a></div>
+      <h1>GitHub AI 热榜 — 2026-03-03（周二）</h1>
+      <p class="subtitle">数据来源：GitHub Trending（历史归档）</p>
     </div>
   </header>
+  <main class="container">
+    <section class="section">
+      <div class="section-title">🐍 Python 赛道</div>
+      <table><thead><tr><th>排名</th><th>项目</th><th>简介</th><th>今日 Star</th><th>总 Star</th></tr></thead><tbody>
+<tr><td class="rank">1</td><td class="project-name"><a href="https://github.com/ruvnet/RuView" target="_blank">ruvnet/RuView</a></td><td class="desc">WiFi DensePose:将普通WiFi信号转换为实时人体姿态估计、生命体征监测和存在检测 — 无需任何视频像素。这项创新技术利用WiFi信号来感知人体动作和状态。</td><td class="stars">—</td><td>—</td></tr>
+<tr><td class="rank">2</td><td class="project-name"><a href="https://github.com/moeru-ai/airi" target="_blank">moeru-ai/airi</a></td><td class="desc">自托管Grok伴侣:一个拥有者的Grok伴侣，是动漫角色、网络生命的容器，希望能达到Neuro-sama的高度。支持实时语音聊天、Minecraft、Factorio游戏。支持Web/macOS/Windows。</td><td class="stars">—</td><td>—</td></tr>
+<tr><td class="rank">3</td><td class="project-name"><a href="https://github.com/anthropics/prompt-eng-interactive-tutorial" target="_blank">anthropics/prompt-eng-interactive-tutorial</a></td><td class="desc">Anthropic交互式提示工程教程:Anthropic官方出品的提示工程交互式教程，帮助用户掌握AI提示词设计的核心技能和最佳实践。</td><td class="stars">—</td><td>—</td></tr>
+<tr><td class="rank">4</td><td class="project-name"><a href="https://github.com/ruvnet/ruflo" target="_blank">ruvnet/ruflo</a></td><td class="desc">Claude智能体编排平台:Claude领先的智能体编排平台，部署智能多智能体集群，协调自主工作流程，构建对话式AI系统。具有企业级架构、分布式集群智能、RAG集成和原生Claude Code/Codex集成功能。</td><td class="stars">—</td><td>—</td></tr>
+<tr><td class="rank">5</td><td class="project-name"><a href="https://github.com/alibaba/OpenSandbox" target="_blank">alibaba/OpenSandbox</a></td><td class="desc">通用AI应用沙箱平台:专为AI应用设计的通用沙箱平台，提供多语言SDK、统一的沙箱API以及Docker/Kubernetes运行时，适用于编码智能体、GUI智能体、智能体评估、AI代码执行和RL训练等场景。</td><td class="stars">—</td><td>—</td></tr>
+<tr><td class="rank">6</td><td class="project-name"><a href="https://github.com/microsoft/markitdown" target="_blank">microsoft/markitdown</a></td><td class="desc">文件转换工具:Microsoft开发的Python工具，用于将各种文件和办公文档转换为Markdown格式。支持多种文件类型的转换，提高文档处理效率。</td><td class="stars">—</td><td>—</td></tr>
+<tr><td class="rank">7</td><td class="project-name"><a href="https://github.com/K-Dense-AI/claude-scientific-skills" target="_blank">K-Dense-AI/claude-scientific-skills</a></td><td class="desc">Claude科研技能集:一组即用型智能体技能，专门用于研究、科学、工程、分析、金融和写作。为AI在专业领域的应用提供标准化解决方案。</td><td class="stars">—</td><td>—</td></tr>
+<tr><td class="rank">8</td><td class="project-name"><a href="https://github.com/superset-sh/superset" target="_blank">superset-sh/superset</a></td><td class="desc">AI智能体时代IDE:AI智能体时代的集成开发环境，可以在您的机器上运行大量的Claude Code、Codex等智能体。为AI开发提供全新的编程体验。</td><td class="stars">—</td><td>—</td></tr>
+<tr><td class="rank">9</td><td class="project-name"><a href="https://github.com/servo/servo" target="_blank">servo/servo</a></td><td class="desc">Web技术嵌入引擎:Servo旨在为开发者提供一个轻量级、高性能的替代方案，用于在应用程序中嵌入Web技术。为现代Web应用开发提供底层支持。</td><td class="stars">—</td><td>—</td></tr>
+      </tbody></table>
+    </section>
+    <section class="section">
+      <div class="section-title">📘 TypeScript 赛道</div>
+      <table><thead><tr><th>排名</th><th>项目</th><th>简介</th><th>今日 Star</th><th>总 Star</th></tr></thead><tbody>
 
-  <div class="section-title"><span>🐍</span> Python 赛道</div>
-  <table>
-    <thead>
-      <tr><th class="rank">#</th><th>项目</th><th class="stars">日增 ⭐</th><th class="total">总 ⭐</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="rank">1</td>
-        <td class="repo">
-          <a href="https://github.com/anthropics/prompt-eng-interactive-tutorial" target="_blank">anthropics/prompt-eng-interactive-tutorial</a>
-          <div class="desc">Anthropic交互式提示工程教程:Anthropic官方出品的提示工程交互式教程，帮助用户掌握AI提示词设计的核心技能和最佳实践。</div>
-        </td>
-        <td class="stars">+526</td>
-        <td class="total">31733</td>
-      </tr>
-      <tr>
-        <td class="rank">2</td>
-        <td class="repo">
-          <a href="https://github.com/alibaba/OpenSandbox" target="_blank">alibaba/OpenSandbox</a>
-          <div class="desc">通用AI应用沙箱平台:专为AI应用设计的通用沙箱平台，提供多语言SDK、统一的沙箱API以及Docker/Kubernetes运行时，适用于编码智能体、GUI智能体、智能体评估、AI代码执行和RL训练等场景。</div>
-        </td>
-        <td class="stars">+1026</td>
-        <td class="total">4493</td>
-      </tr>
-      <tr>
-        <td class="rank">3</td>
-        <td class="repo">
-          <a href="https://github.com/microsoft/markitdown" target="_blank">microsoft/markitdown</a>
-          <div class="desc">文件转换工具:Microsoft开发的Python工具，用于将各种文件和办公文档转换为Markdown格式。支持多种文件类型的转换，提高文档处理效率。</div>
-        </td>
-        <td class="stars">—</td>
-        <td class="total">—</td>
-      </tr>
-      <tr>
-        <td class="rank">4</td>
-        <td class="repo">
-          <a href="https://github.com/ruvnet/RuView" target="_blank">ruvnet/RuView</a>
-          <div class="desc">WiFi DensePose:将普通WiFi信号转换为实时人体姿态估计、生命体征监测和存在检测 — 无需任何视频像素。这项创新技术利用WiFi信号来感知人体动作和状态。</div>
-        </td>
-        <td class="stars">—</td>
-        <td class="total">—</td>
-      </tr>
-      <tr>
-        <td class="rank">5</td>
-        <td class="repo">
-          <a href="https://github.com/servo/servo" target="_blank">servo/servo</a>
-          <div class="desc">Web技术嵌入引擎:Servo旨在为开发者提供一个轻量级、高性能的替代方案，用于在应用程序中嵌入Web技术。为现代Web应用开发提供底层支持。</div>
-        </td>
-        <td class="stars">—</td>
-        <td class="total">—</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="section-title"><span>📘</span> TypeScript 赛道</div>
-  <table>
-    <thead>
-      <tr><th class="rank">#</th><th>项目</th><th class="stars">日增 ⭐</th><th class="total">总 ⭐</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="rank">1</td>
-        <td class="repo">
-          <a href="https://github.com/moeru-ai/airi" target="_blank">moeru-ai/airi</a>
-          <div class="desc">自托管Grok伴侣:一个拥有者的Grok伴侣，是动漫角色、网络生命的容器，希望能达到Neuro-sama的高度。支持实时语音聊天、Minecraft、Factorio游戏。支持Web/macOS/Windows。</div>
-        </td>
-        <td class="stars">+1412</td>
-        <td class="total">21552</td>
-      </tr>
-      <tr>
-        <td class="rank">2</td>
-        <td class="repo">
-          <a href="https://github.com/ruvnet/ruflo" target="_blank">ruvnet/ruflo</a>
-          <div class="desc">Claude智能体编排平台:Claude领先的智能体编排平台，部署智能多智能体集群，协调自主工作流程，构建对话式AI系统。具有企业级架构、分布式集群智能、RAG集成和原生Claude Code/Codex集成功能。</div>
-        </td>
-        <td class="stars">+830</td>
-        <td class="total">18168</td>
-      </tr>
-      <tr>
-        <td class="rank">3</td>
-        <td class="repo">
-          <a href="https://github.com/superset-sh/superset" target="_blank">superset-sh/superset</a>
-          <div class="desc">AI智能体时代IDE:AI智能体时代的集成开发环境，可以在您的机器上运行大量的Claude Code、Codex等智能体。为AI开发提供全新的编程体验。</div>
-        </td>
-        <td class="stars">+585</td>
-        <td class="total">3600</td>
-      </tr>
-      <tr>
-        <td class="rank">4</td>
-        <td class="repo">
-          <a href="https://github.com/K-Dense-AI/claude-scientific-skills" target="_blank">K-Dense-AI/claude-scientific-skills</a>
-          <div class="desc">Claude科研技能集:一组即用型智能体技能，专门用于研究、科学、工程、分析、金融和写作。为AI在专业领域的应用提供标准化解决方案。</div>
-        </td>
-        <td class="stars">—</td>
-        <td class="total">—</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="insights">
-    <h3>💡 今日洞察</h3>
-    <p>
-      <strong>ruvnet/RuView</strong>（WiFi DensePose:将普通WiFi信号转换为实时人体姿态估计、生命体征...）获得 — ⭐；<strong>moeru-ai/airi</strong>（自托管Grok伴侣:一个拥有者的Grok伴侣，是动漫角色、网络生命的容器，希望能...）获得 +1412 ⭐；<strong>anthropics/prompt-eng-interactive-tutorial</strong>（Anthropic交互式提示工程教程:Anthropic官方出品的提示工程交互式...）获得 +526 ⭐；<strong>ruvnet/ruflo</strong>（Claude智能体编排平台:Claude领先的智能体编排平台，部署智能多智能体集...）获得 +830 ⭐；<strong>alibaba/OpenSandbox</strong>（通用AI应用沙箱平台:专为AI应用设计的通用沙箱平台，提供多语言SDK、统一的沙...）获得 +1026 ⭐。
-    </p>
-  </div>
-
-  <div class="counter">
-    <span id="busuanzi_container_site_pv">本站总浏览 <span id="busuanzi_value_site_pv">--</span> 次</span> ·
-    <span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv">--</span> 人</span>
-  </div>
-</div>
-
-<footer>
-  <p>
-    <a href="2026-02-28.html">← 上一篇 2026-02-28</a> · <a href="../index.html">返回门户首页</a> · <a href="2026-03-04.html">下一篇 2026-03-04 →</a>
-  </p>
-  <p style="margin-top:6px">© 2026 GitHub AI 热榜门户</p>
-</footer>
-
-<script>
-(function(){
-  const btn = document.getElementById('themeBtn');
-  const saved = localStorage.getItem('ai-trending-theme');
-  if (saved === 'dark') document.documentElement.setAttribute('data-theme','dark');
-  else if (saved === 'light') document.documentElement.setAttribute('data-theme','light');
-  else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-theme','dark');
-  }
-  btn.addEventListener('click', () => {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    const next = isDark ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('ai-trending-theme', next);
-  });
-})();
-</script>
+      </tbody></table>
+    </section>
+    <section class="section">
+      <div class="section-title">💡 今日洞察</div>
+      <div class="insights"><ul>
+<li>暂无详细洞察。</li>
+      </ul></div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>AI Trending 门户 · 每日追踪 GitHub AI 项目趋势</p>
+      <div class="stats-bar">
+        <span>📊 <a href="https://daniel-hwang.goatcounter.com/" target="_blank">访问统计</a></span>
+        <span>🔗 <a href="https://daniel-hwang.github.io/bci-news/" target="_blank">BCI News</a></span>
+        <span>👁 累计访问 <span id="busuanzi_value_site_pv">-</span></span>
+        <span>👥 总访客 <span id="busuanzi_value_site_uv">-</span></span>
+      </div>
+      <p style="margin-top:15px; font-size:0.8rem;">报告时间：2026-03-03 12:00（Asia/Shanghai）</p>
+    </div>
+  </footer>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>
