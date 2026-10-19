@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub AI 热榜 — 2026-08-29</title>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-goatcounter="https://ai-trending.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>
+  :root {
+    --bg: #f6f8fa;
+    --fg: #1f2328;
+    --muted: #656d76;
+    --card: #ffffff;
+    --border: #d0d7de;
+    --accent: #0969da;
+    --accent2: #1f883d;
+    --danger: #cf222e;
+    --warning: #9a6700;
+    --shadow: 0 1px 3px rgba(31,35,40,0.08);
+    --shadow-lg: 0 8px 24px rgba(31,35,40,0.12);
+    --radius: 12px;
+    --radius-sm: 8px;
+    --maxw: 980px;
+  }
+  [data-theme="dark"] {
+    --bg: #0d1117;
+    --fg: #c9d1d9;
+    --muted: #8b949e;
+    --card: #161b22;
+    --border: #30363d;
+    --accent: #58a6ff;
+    --accent2: #3fb950;
+    --danger: #f85149;
+    --warning: #d29922;
+    --shadow: 0 1px 3px rgba(0,0,0,0.4);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg); line-height: 1.6;
+    transition: background .25s, color .25s;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+  nav {
+    padding: 14px 20px; border-bottom: 1px solid var(--border); background: var(--card);
+    display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 10;
+    box-shadow: var(--shadow);
+  }
+  nav .back { font-size: .9rem; font-weight: 600; }
+  nav .date { margin-left: auto; font-size: .85rem; color: var(--muted); }
+  .theme-toggle {
+    background: var(--card); border: 1px solid var(--border); color: var(--fg);
+    border-radius: 999px; padding: 5px 12px; cursor: pointer; font-size: .8rem;
+  }
+  .theme-toggle:hover { border-color: var(--accent); }
+  header.report-header {
+    text-align: center; padding: 40px 20px 24px;
+  }
+  header.report-header h1 { font-size: 1.7rem; font-weight: 800; }
+  header.report-header .meta { color: var(--muted); font-size: .9rem; margin-top: 6px; }
+  .section-title {
+    font-size: 1.15rem; font-weight: 700; margin: 28px 0 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  table {
+    width: 100%; border-collapse: collapse; background: var(--card);
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    overflow: hidden; box-shadow: var(--shadow); font-size: .92rem;
+  }
+  thead { background: rgba(9,105,218,.06); }
+  [data-theme="dark"] thead { background: rgba(88,166,255,.08); }
+  th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .4px; color: var(--muted); }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(9,105,218,.03); }
+  [data-theme="dark"] tr:hover td { background: rgba(88,166,255,.05); }
+  .rank { font-weight: 700; color: var(--accent); width: 44px; text-align: center; }
+  .stars { font-weight: 600; color: var(--accent2); white-space: nowrap; }
+  .total { color: var(--muted); white-space: nowrap; }
+  .repo a { font-weight: 600; }
+  .repo .desc { font-size: .82rem; color: var(--muted); }
+  .insights {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm);
+    padding: 20px; box-shadow: var(--shadow); margin: 28px 0;
+  }
+  .insights h3 { font-size: 1.05rem; margin-bottom: 10px; }
+  .insights p { font-size: .92rem; color: var(--muted); line-height: 1.7; }
+  .counter { text-align: center; padding: 16px; font-size: .85rem; color: var(--muted); }
+  footer {
+    text-align: center; padding: 28px 20px; color: var(--muted); font-size: .8rem;
+    border-top: 1px solid var(--border); margin-top: 12px;
+  }
+  @media (max-width: 640px) {
+    th, td { padding: 8px 10px; font-size: .85rem; }
+    .repo .desc { display: none; }
+    header.report-header h1 { font-size: 1.3rem; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a class="back" href="../index.html">← 返回门户首页</a>
+  <span class="date">2026-08-29（周六）</span>
+  <button class="theme-toggle" id="themeBtn">🌓</button>
+</nav>
+
+<div class="container">
+  <header class="report-header">
+    <h1>🔥 GitHub AI 热榜 Top10 — 2026-08-29</h1>
+    <div class="meta">
+      页面浏览 <span id="busuanzi_value_page_pv">--</span> 次
+    </div>
+  </header>
+
+  <div class="section-title"><span>🐍</span> Python 赛道</div>
+  <table>
+    <thead>
+      <tr><th class="rank">#</th><th>项目</th><th class="stars">日增 ⭐</th><th class="total">总 ⭐</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rank">1</td>
+        <td class="repo">
+          <a href="https://github.com/K-Dense-AI/scientific-agent-skills" target="_blank">K-Dense-AI/scientific-agent-skills</a>
+          <div class="desc">Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 175,000+ scientists worldwide. 163 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.</div>
+        </td>
+        <td class="stars">+720</td>
+        <td class="total">—</td>
+      </tr>
+      <tr>
+        <td class="rank">2</td>
+        <td class="repo">
+          <a href="https://github.com/calesthio/OpenMontage" target="_blank">calesthio/OpenMontage</a>
+          <div class="desc">World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.</div>
+        </td>
+        <td class="stars">+1144</td>
+        <td class="total">—</td>
+      </tr>
+      <tr>
+        <td class="rank">3</td>
+        <td class="repo">
+          <a href="https://github.com/abi/screenshot-to-code" target="_blank">abi/screenshot-to-code</a>
+          <div class="desc">Drop in a screenshot and convert it to clean code (HTML/Tailwind/React/Vue)</div>
+        </td>
+        <td class="stars">+326</td>
+        <td class="total">—</td>
+      </tr>
+      <tr>
+        <td class="rank">4</td>
+        <td class="repo">
+          <a href="https://github.com/JetBrains/go-modern-guidelines" target="_blank">JetBrains/go-modern-guidelines</a>
+          <div class="desc">Help AI coding agents write modern Go</div>
+        </td>
+        <td class="stars">+574</td>
+        <td class="total">—</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-title"><span>📘</span> TypeScript 赛道</div>
+  <table>
+    <thead>
+      <tr><th class="rank">#</th><th>项目</th><th class="stars">日增 ⭐</th><th class="total">总 ⭐</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rank">1</td>
+        <td class="repo">
+          <a href="https://github.com/tt-a1i/archify" target="_blank">tt-a1i/archify</a>
+          <div class="desc">Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export.</div>
+        </td>
+        <td class="stars">+4562</td>
+        <td class="total">—</td>
+      </tr>
+      <tr>
+        <td class="rank">2</td>
+        <td class="repo">
+          <a href="https://github.com/abhigyanpatwari/GitNexus" target="_blank">abhigyanpatwari/GitNexus</a>
+          <div class="desc">GitNexus: The Zero-Server Code Intelligence Engine - GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a git repository (Github, Gitlab, Azure, Local) or ZIP file, and get an interactive knowledge graph with a built in Graph RAG Agent. Perfect for code exploration</div>
+        </td>
+        <td class="stars">+202</td>
+        <td class="total">—</td>
+      </tr>
+      <tr>
+        <td class="rank">3</td>
+        <td class="repo">
+          <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank">freestylefly/awesome-gpt-image-2</a>
+          <div class="desc">Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中</div>
+        </td>
+        <td class="stars">+1687</td>
+        <td class="total">—</td>
+      </tr>
+      <tr>
+        <td class="rank">4</td>
+        <td class="repo">
+          <a href="https://github.com/tashfeenahmed/freellmapi" target="_blank">tashfeenahmed/freellmapi</a>
+          <div class="desc">7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.</div>
+        </td>
+        <td class="stars">+433</td>
+        <td class="total">—</td>
+      </tr>
+      <tr>
+        <td class="rank">5</td>
+        <td class="repo">
+          <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank">ChromeDevTools/chrome-devtools-mcp</a>
+          <div class="desc">Chrome DevTools for coding agents</div>
+        </td>
+        <td class="stars">+67</td>
+        <td class="total">—</td>
+      </tr>
+      <tr>
+        <td class="rank">6</td>
+        <td class="repo">
+          <a href="https://github.com/tailscale/tailcat" target="_blank">tailscale/tailcat</a>
+          <div class="desc">like netcat, but over Tailscale's data plane, without Tailscale's control plane</div>
+        </td>
+        <td class="stars">+965</td>
+        <td class="total">—</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="insights">
+    <h3>💡 今日洞察</h3>
+    <p>
+      <strong>tt-a1i/archify</strong>（Agent skill for beautiful, verifiable ar...）获得 +4562 ⭐；<strong>K-Dense-AI/scientific-agent-skills</strong>（Turn any AI agent into an AI Scientist. ...）获得 +720 ⭐；<strong>abhigyanpatwari/GitNexus</strong>（GitNexus: The Zero-Server Code Intellige...）获得 +202 ⭐；<strong>JetBrains/go-modern-guidelines</strong>（Help AI coding agents write modern Go）获得 +574 ⭐；<strong>calesthio/OpenMontage</strong>（World's first open-source, agentic video...）获得 +1144 ⭐。
+    </p>
+  </div>
+
+  <div class="counter">
+    <span id="busuanzi_container_site_pv">本站总浏览 <span id="busuanzi_value_site_pv">--</span> 次</span> ·
+    <span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv">--</span> 人</span>
+  </div>
+</div>
+
+<footer>
+  <p>
+    <a href="2026-08-28.html">← 上一篇 2026-08-28</a> · <a href="../index.html">返回门户首页</a> · <a href="2026-08-30.html">下一篇 2026-08-30 →</a>
+  </p>
+  <p style="margin-top:6px">© 2026 GitHub AI 热榜门户</p>
+</footer>
+
+<script>
+(function(){
+  const btn = document.getElementById('themeBtn');
+  const saved = localStorage.getItem('ai-trending-theme');
+  if (saved === 'dark') document.documentElement.setAttribute('data-theme','dark');
+  else if (saved === 'light') document.documentElement.setAttribute('data-theme','light');
+  else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-theme','dark');
+  }
+  btn.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('ai-trending-theme', next);
+  });
+})();
+</script>
+</body>
+</html>
