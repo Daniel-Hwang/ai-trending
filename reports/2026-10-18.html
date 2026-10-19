@@ -1,99 +1,312 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub AI 热榜 2026-10-18 | AI Trending</title>
-  <script data-goatcounter="https://daniel-hwang.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-  <style>
-    :root { --bg: #0f172a; --bg-card: #1e293b; --text: #f8fafc; --text-secondary: #94a3b8; --accent: #38bdf8; --accent-2: #818cf8; --border: #334155; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-    header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-bottom: 1px solid var(--border); padding: 30px 0; }
-    .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-    .nav a { color: var(--accent); text-decoration: none; font-size: 0.95rem; }
-    .nav a:hover { text-decoration: underline; }
-    .logo { font-size: 1.5rem; font-weight: 700; background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    h1 { font-size: 2rem; margin-top: 10px; }
-    .subtitle { color: var(--text-secondary); margin-top: 8px; }
-    main { padding: 40px 0; }
-    .section { margin-bottom: 40px; }
-    .section-title { font-size: 1.4rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-    table { width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
-    th, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--border); }
-    th { background: rgba(56, 189, 248, 0.1); color: var(--accent); font-weight: 600; }
-    tr:hover { background: rgba(255,255,255,0.03); }
-    .rank { font-weight: 700; color: var(--accent); width: 50px; }
-    .project-name { font-weight: 600; }
-    .project-name a { color: var(--text); text-decoration: none; }
-    .project-name a:hover { color: var(--accent); }
-    .stars { color: #fbbf24; font-weight: 600; white-space: nowrap; }
-    .desc { color: var(--text-secondary); font-size: 0.9rem; }
-    .insights { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
-    .insights ul { list-style: none; }
-    .insights li { padding: 10px 0; border-bottom: 1px solid var(--border); }
-    .insights li:last-child { border-bottom: none; }
-    .insights strong { color: var(--accent); }
-    footer { border-top: 1px solid var(--border); padding: 30px 0; text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
-    .stats-bar { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
-    @media (max-width: 768px) { h1 { font-size: 1.5rem; } table { font-size: 0.85rem; } th, td { padding: 10px; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub AI 热榜 — 2026-10-18</title>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-goatcounter="https://ai-trending.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>
+  :root {
+    --bg: #f6f8fa;
+    --fg: #1f2328;
+    --muted: #656d76;
+    --card: #ffffff;
+    --border: #d0d7de;
+    --accent: #0969da;
+    --accent2: #1f883d;
+    --danger: #cf222e;
+    --warning: #9a6700;
+    --shadow: 0 1px 3px rgba(31,35,40,0.08);
+    --shadow-lg: 0 8px 24px rgba(31,35,40,0.12);
+    --radius: 12px;
+    --radius-sm: 8px;
+    --maxw: 980px;
+  }
+  [data-theme="dark"] {
+    --bg: #0d1117;
+    --fg: #c9d1d9;
+    --muted: #8b949e;
+    --card: #161b22;
+    --border: #30363d;
+    --accent: #58a6ff;
+    --accent2: #3fb950;
+    --danger: #f85149;
+    --warning: #d29922;
+    --shadow: 0 1px 3px rgba(0,0,0,0.4);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg); line-height: 1.6;
+    transition: background .25s, color .25s;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+  nav {
+    padding: 14px 20px; border-bottom: 1px solid var(--border); background: var(--card);
+    display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 10;
+    box-shadow: var(--shadow);
+  }
+  nav .back { font-size: .9rem; font-weight: 600; }
+  nav .date { margin-left: auto; font-size: .85rem; color: var(--muted); }
+  .theme-toggle {
+    background: var(--card); border: 1px solid var(--border); color: var(--fg);
+    border-radius: 999px; padding: 5px 12px; cursor: pointer; font-size: .8rem;
+  }
+  .theme-toggle:hover { border-color: var(--accent); }
+  header.report-header {
+    text-align: center; padding: 40px 20px 24px;
+  }
+  header.report-header h1 { font-size: 1.7rem; font-weight: 800; }
+  header.report-header .meta { color: var(--muted); font-size: .9rem; margin-top: 6px; }
+  .section-title {
+    font-size: 1.15rem; font-weight: 700; margin: 28px 0 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  table {
+    width: 100%; border-collapse: collapse; background: var(--card);
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    overflow: hidden; box-shadow: var(--shadow); font-size: .92rem;
+  }
+  thead { background: rgba(9,105,218,.06); }
+  [data-theme="dark"] thead { background: rgba(88,166,255,.08); }
+  th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .4px; color: var(--muted); }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(9,105,218,.03); }
+  [data-theme="dark"] tr:hover td { background: rgba(88,166,255,.05); }
+  .rank { font-weight: 700; color: var(--accent); width: 44px; text-align: center; }
+  .stars { font-weight: 600; color: var(--accent2); white-space: nowrap; }
+  .total { color: var(--muted); white-space: nowrap; }
+  .repo a { font-weight: 600; }
+  .repo .desc { font-size: .82rem; color: var(--muted); }
+  .insights {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm);
+    padding: 20px; box-shadow: var(--shadow); margin: 28px 0;
+  }
+  .insights h3 { font-size: 1.05rem; margin-bottom: 10px; }
+  .insights p { font-size: .92rem; color: var(--muted); line-height: 1.7; }
+  .counter { text-align: center; padding: 16px; font-size: .85rem; color: var(--muted); }
+  footer {
+    text-align: center; padding: 28px 20px; color: var(--muted); font-size: .8rem;
+    border-top: 1px solid var(--border); margin-top: 12px;
+  }
+  @media (max-width: 640px) {
+    th, td { padding: 8px 10px; font-size: .85rem; }
+    .repo .desc { display: none; }
+    header.report-header h1 { font-size: 1.3rem; }
+  }
+</style>
+<style>
+.ai-trending-portal-nav { background: #0f172a; border-bottom: 1px solid #334155; padding: 12px 20px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+.ai-trending-portal-nav a { color: #38bdf8; text-decoration: none; font-size: 0.95rem; font-weight: 600; }
+.ai-trending-portal-nav a:hover { text-decoration: underline; }
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="nav"><div class="logo">🔥 AI Trending</div><a href="../index.html">← 返回首页</a></div>
-      <h1>GitHub AI 热榜 — 2026-10-18（周日）</h1>
-      <p class="subtitle">数据来源：GitHub Trending（历史归档）</p>
+<div class="ai-trending-portal-nav"><a href="../index.html">← 返回 AI Trending 门户</a></div>
+
+<nav>
+  <a class="back" href="../index.html">← 返回门户首页</a>
+  <span class="date">2026-10-18（周日）</span>
+  <button class="theme-toggle" id="themeBtn">🌓</button>
+</nav>
+
+<div class="container">
+  <header class="report-header">
+    <h1>🔥 GitHub AI 热榜 Top10 — 2026-10-18</h1>
+    <div class="meta">
+      页面浏览 <span id="busuanzi_value_page_pv">--</span> 次
     </div>
   </header>
-  <main class="container">
-    <section class="section">
-      <div class="section-title">🐍 Python 赛道</div>
-      <table><thead><tr><th>排名</th><th>项目</th><th>简介</th><th>今日 Star</th><th>总 Star</th></tr></thead><tbody>
-<tr><td class="rank">1</td><td class="project-name"><a href="https://github.com/debpalash/VoiceStudio" target="_blank">debpalash/VoiceStudio</a></td><td class="desc">debpalash/VoiceStudio开源 ElevenLabs 替代（语音克隆/646 语言）</td><td class="stars">—</td><td>1</td></tr>
-<tr><td class="rank">2</td><td class="project-name"><a href="https://github.com/ytdl-org/youtube-dl" target="_blank">ytdl-org/youtube-dl</a></td><td class="desc">ytdl-org/youtube-dl视频下载工具</td><td class="stars">—</td><td>2</td></tr>
-<tr><td class="rank">3</td><td class="project-name"><a href="https://github.com/open-webui/open-webui" target="_blank">open-webui/open-webui</a></td><td class="desc">open-webui/open-webui用户友好的 AI 界面</td><td class="stars">—</td><td>3</td></tr>
-<tr><td class="rank">4</td><td class="project-name"><a href="https://github.com/bmad-code-org/BMAD-METHOD" target="_blank">bmad-code-org/BMAD-METHOD</a></td><td class="desc">bmad-code-org/BMAD-METHODAI 敏捷开发方法</td><td class="stars">—</td><td>4</td></tr>
-<tr><td class="rank">5</td><td class="project-name"><a href="https://github.com/The-Swarm-Corporation/AutoHedge" target="_blank">The-Swarm-Corporation/AutoHedge</a></td><td class="desc">The-Swarm-Corporation/AutoHedgeAI Agent 对冲基金</td><td class="stars">—</td><td>5</td></tr>
-<tr><td class="rank">6</td><td class="project-name"><a href="https://github.com/lightseekorg/tokenspeed" target="_blank">lightseekorg/tokenspeed</a></td><td class="desc">lightseekorg/tokenspeed极速 LLM 推理引擎</td><td class="stars">—</td><td>6</td></tr>
-<tr><td class="rank">7</td><td class="project-name"><a href="https://github.com/morluto/rea" target="_blank">morluto/rea</a></td><td class="desc">morluto/rea用 Agent 逆向工程一切</td><td class="stars">—</td><td>1</td></tr>
-<tr><td class="rank">8</td><td class="project-name"><a href="https://github.com/ruvnet/agent-skills" target="_blank">ruvnet/agent-skills</a></td><td class="desc">ruvnet/agent-skillsAgent Skills 框架</td><td class="stars">—</td><td>2</td></tr>
-<tr><td class="rank">9</td><td class="project-name"><a href="https://github.com/mksglu/context-mode" target="_blank">mksglu/context-mode</a></td><td class="desc">mksglu/context-modeAI 编码 Agent 上下文优化</td><td class="stars">—</td><td>3</td></tr>
-<tr><td class="rank">10</td><td class="project-name"><a href="https://github.com/cursor/plugins" target="_blank">cursor/plugins</a></td><td class="desc">cursor/pluginsCursor 插件规范与官方插件</td><td class="stars">—</td><td>4</td></tr>
-<tr><td class="rank">11</td><td class="project-name"><a href="https://github.com/thesysdev/openui" target="_blank">thesysdev/openui</a></td><td class="desc">thesysdev/openui生成式 UI 开放标准</td><td class="stars">—</td><td>5</td></tr>
-<tr><td class="rank">12</td><td class="project-name"><a href="https://github.com/elie222/rakazo" target="_blank">elie222/rakazo</a></td><td class="desc">elie222/rakazo开源 Grok Bot 替代</td><td class="stars">—</td><td>6</td></tr>
-<tr><td class="rank">13</td><td class="project-name"><a href="https://github.com/OpenBMB/PilotDeck" target="_blank">OpenBMB/PilotDeck</a></td><td class="desc">OpenBMB/PilotDeck任务导向 AI Agent 生产力平台</td><td class="stars">—</td><td>7</td></tr>
-<tr><td class="rank">14</td><td class="project-name"><a href="https://github.com/awslabs/aidlc-workflows" target="_blank">awslabs/aidlc-workflows</a></td><td class="desc">awslabs/aidlc-workflowsAI 驱动生命周期工作流</td><td class="stars">—</td><td>8</td></tr>
-      </tbody></table>
-    </section>
-    <section class="section">
-      <div class="section-title">📘 TypeScript 赛道</div>
-      <table><thead><tr><th>排名</th><th>项目</th><th>简介</th><th>今日 Star</th><th>总 Star</th></tr></thead><tbody>
 
-      </tbody></table>
-    </section>
-    <section class="section">
-      <div class="section-title">💡 今日洞察</div>
-      <div class="insights"><ul>
-<li>🔥 GitHub AI 热榜 Top10 — 2026-10-18页面浏览--次🐍Python 赛道#项目日增 ⭐总 ⭐1debpalash/VoiceStudio开源 ElevenLabs 替代（语音克隆/646 语言）+2,12573.5k2ytdl-org/youtube-dl视频下载工具+412198.9k3open-webui/open-webui用户友好的 AI 界面+142154.7k4bmad-code-org/BMAD-METHODAI 敏捷开发方法+3954.3k5The-Swarm-Corporation/AutoHedgeAI Agent 对冲基金+326.4k6lightseekorg/tokenspeed极速 LLM 推理引擎+242.7k📘TypeScript 赛道#项目日增 ⭐总 ⭐1morluto/rea用 Agent 逆向工程一切+45,495143.7k2ruvnet/agent-skillsAgent Skills 框架+42076.1k3mksglu/context-modeAI 编码 Agent 上下文优化+39427.0k4cursor/pluginsCursor 插件规范与官方插件+38812.3k5thesysdev/openui生成式 UI 开放标准+17011.6k6elie222/rakazo开源 Grok Bot 替代+1534.5k7OpenBMB/PilotDeck任务导向 AI Agent 生产力平台+774.6k8awslabs/aidlc-workflowsAI 驱动生命周期工作流+155.4k💡 今日洞察逆向工程 Agentrea单日爆增 45,495 ⭐ 成最大亮点；语音克隆工具VoiceStudio继续霸榜 Python 赛道；agent-skills框架与context-mode上下文优化方案显示 Agent 基础设施持续升温；Cursor插件生态、openui生成式 UI 标准、rakazo开源 Grok 替代以及AutoHedgeAI 对冲基金等方向均值得关注。本站总浏览--次·访客--人</li>
-<li>💡 今日洞察逆向工程 Agentrea单日爆增 45,495 ⭐ 成最大亮点；语音克隆工具VoiceStudio继续霸榜 Python 赛道；agent-skills框架与context-mode上下文优化方案显示 Agent 基础设施持续升温；Cursor插件生态、openui生成式 UI 标准、rakazo开源 Grok 替代以及AutoHedgeAI 对冲基金等方向均值得关注。</li>
-      </ul></div>
-    </section>
-  </main>
-  <footer>
-    <div class="container">
-      <p>AI Trending 门户 · 每日追踪 GitHub AI 项目趋势</p>
-      <div class="stats-bar">
-        <span>📊 <a href="https://daniel-hwang.goatcounter.com/" target="_blank">访问统计</a></span>
-        <span>🔗 <a href="https://daniel-hwang.github.io/bci-news/" target="_blank">BCI News</a></span>
-        <span>👁 累计访问 <span id="busuanzi_value_site_pv">-</span></span>
-        <span>👥 总访客 <span id="busuanzi_value_site_uv">-</span></span>
-      </div>
-      <p style="margin-top:15px; font-size:0.8rem;">报告时间：2026-10-18 12:00（Asia/Shanghai）</p>
-    </div>
-  </footer>
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="section-title"><span>🐍</span> Python 赛道</div>
+  <table>
+    <thead>
+      <tr><th class="rank">#</th><th>项目</th><th class="stars">日增 ⭐</th><th class="total">总 ⭐</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rank">1</td>
+        <td class="repo">
+          <a href="https://github.com/debpalash/VoiceStudio" target="_blank">debpalash/VoiceStudio</a>
+          <div class="desc">开源 ElevenLabs 替代（语音克隆/646 语言）</div>
+        </td>
+        <td class="stars">+2,125</td>
+        <td class="total">73.5k</td>
+      </tr>
+      <tr>
+        <td class="rank">2</td>
+        <td class="repo">
+          <a href="https://github.com/ytdl-org/youtube-dl" target="_blank">ytdl-org/youtube-dl</a>
+          <div class="desc">视频下载工具</div>
+        </td>
+        <td class="stars">+412</td>
+        <td class="total">198.9k</td>
+      </tr>
+      <tr>
+        <td class="rank">3</td>
+        <td class="repo">
+          <a href="https://github.com/open-webui/open-webui" target="_blank">open-webui/open-webui</a>
+          <div class="desc">用户友好的 AI 界面</div>
+        </td>
+        <td class="stars">+142</td>
+        <td class="total">154.7k</td>
+      </tr>
+      <tr>
+        <td class="rank">4</td>
+        <td class="repo">
+          <a href="https://github.com/bmad-code-org/BMAD-METHOD" target="_blank">bmad-code-org/BMAD-METHOD</a>
+          <div class="desc">AI 敏捷开发方法</div>
+        </td>
+        <td class="stars">+39</td>
+        <td class="total">54.3k</td>
+      </tr>
+      <tr>
+        <td class="rank">5</td>
+        <td class="repo">
+          <a href="https://github.com/The-Swarm-Corporation/AutoHedge" target="_blank">The-Swarm-Corporation/AutoHedge</a>
+          <div class="desc">AI Agent 对冲基金</div>
+        </td>
+        <td class="stars">+32</td>
+        <td class="total">6.4k</td>
+      </tr>
+      <tr>
+        <td class="rank">6</td>
+        <td class="repo">
+          <a href="https://github.com/lightseekorg/tokenspeed" target="_blank">lightseekorg/tokenspeed</a>
+          <div class="desc">极速 LLM 推理引擎</div>
+        </td>
+        <td class="stars">+24</td>
+        <td class="total">2.7k</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-title"><span>📘</span> TypeScript 赛道</div>
+  <table>
+    <thead>
+      <tr><th class="rank">#</th><th>项目</th><th class="stars">日增 ⭐</th><th class="total">总 ⭐</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rank">1</td>
+        <td class="repo">
+          <a href="https://github.com/morluto/rea" target="_blank">morluto/rea</a>
+          <div class="desc">用 Agent 逆向工程一切</div>
+        </td>
+        <td class="stars">+45,495</td>
+        <td class="total">143.7k</td>
+      </tr>
+      <tr>
+        <td class="rank">2</td>
+        <td class="repo">
+          <a href="https://github.com/ruvnet/agent-skills" target="_blank">ruvnet/agent-skills</a>
+          <div class="desc">Agent Skills 框架</div>
+        </td>
+        <td class="stars">+420</td>
+        <td class="total">76.1k</td>
+      </tr>
+      <tr>
+        <td class="rank">3</td>
+        <td class="repo">
+          <a href="https://github.com/mksglu/context-mode" target="_blank">mksglu/context-mode</a>
+          <div class="desc">AI 编码 Agent 上下文优化</div>
+        </td>
+        <td class="stars">+394</td>
+        <td class="total">27.0k</td>
+      </tr>
+      <tr>
+        <td class="rank">4</td>
+        <td class="repo">
+          <a href="https://github.com/cursor/plugins" target="_blank">cursor/plugins</a>
+          <div class="desc">Cursor 插件规范与官方插件</div>
+        </td>
+        <td class="stars">+388</td>
+        <td class="total">12.3k</td>
+      </tr>
+      <tr>
+        <td class="rank">5</td>
+        <td class="repo">
+          <a href="https://github.com/thesysdev/openui" target="_blank">thesysdev/openui</a>
+          <div class="desc">生成式 UI 开放标准</div>
+        </td>
+        <td class="stars">+170</td>
+        <td class="total">11.6k</td>
+      </tr>
+      <tr>
+        <td class="rank">6</td>
+        <td class="repo">
+          <a href="https://github.com/elie222/rakazo" target="_blank">elie222/rakazo</a>
+          <div class="desc">开源 Grok Bot 替代</div>
+        </td>
+        <td class="stars">+153</td>
+        <td class="total">4.5k</td>
+      </tr>
+      <tr>
+        <td class="rank">7</td>
+        <td class="repo">
+          <a href="https://github.com/OpenBMB/PilotDeck" target="_blank">OpenBMB/PilotDeck</a>
+          <div class="desc">任务导向 AI Agent 生产力平台</div>
+        </td>
+        <td class="stars">+77</td>
+        <td class="total">4.6k</td>
+      </tr>
+      <tr>
+        <td class="rank">8</td>
+        <td class="repo">
+          <a href="https://github.com/awslabs/aidlc-workflows" target="_blank">awslabs/aidlc-workflows</a>
+          <div class="desc">AI 驱动生命周期工作流</div>
+        </td>
+        <td class="stars">+15</td>
+        <td class="total">5.4k</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="insights">
+    <h3>💡 今日洞察</h3>
+    <p>
+      逆向工程 Agent <strong>rea</strong> 单日爆增 45,495 ⭐ 成最大亮点；语音克隆工具 <strong>VoiceStudio</strong> 继续霸榜 Python 赛道；<strong>agent-skills</strong> 框架与 <strong>context-mode</strong> 上下文优化方案显示 Agent 基础设施持续升温；<strong>Cursor</strong> 插件生态、<strong>openui</strong> 生成式 UI 标准、<strong>rakazo</strong> 开源 Grok 替代以及 <strong>AutoHedge</strong> AI 对冲基金等方向均值得关注。
+    </p>
+  </div>
+
+  <div class="counter">
+    <span id="busuanzi_container_site_pv">本站总浏览 <span id="busuanzi_value_site_pv">--</span> 次</span> ·
+    <span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv">--</span> 人</span>
+  </div>
+</div>
+
+<footer>
+  <p>
+    <a href="../index.html">← 返回门户首页</a> ·
+    <a href="2026-10-19.html">下一篇 2026-10-19 →</a>
+  </p>
+  <p style="margin-top:6px">© 2026 GitHub AI 热榜门户</p>
+</footer>
+
+<script>
+(function(){
+  const btn = document.getElementById('themeBtn');
+  const saved = localStorage.getItem('ai-trending-theme');
+  if (saved === 'dark') document.documentElement.setAttribute('data-theme','dark');
+  else if (saved === 'light') document.documentElement.setAttribute('data-theme','light');
+  else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-theme','dark');
+  }
+  btn.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('ai-trending-theme', next);
+  });
+})();
+</script>
+
+<script data-goatcounter="https://daniel-hwang.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>

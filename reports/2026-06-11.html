@@ -1,94 +1,118 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub AI 热榜 2026-06-11 | AI Trending</title>
-  <script data-goatcounter="https://daniel-hwang.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-  <style>
-    :root { --bg: #0f172a; --bg-card: #1e293b; --text: #f8fafc; --text-secondary: #94a3b8; --accent: #38bdf8; --accent-2: #818cf8; --border: #334155; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-    header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-bottom: 1px solid var(--border); padding: 30px 0; }
-    .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-    .nav a { color: var(--accent); text-decoration: none; font-size: 0.95rem; }
-    .nav a:hover { text-decoration: underline; }
-    .logo { font-size: 1.5rem; font-weight: 700; background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    h1 { font-size: 2rem; margin-top: 10px; }
-    .subtitle { color: var(--text-secondary); margin-top: 8px; }
-    main { padding: 40px 0; }
-    .section { margin-bottom: 40px; }
-    .section-title { font-size: 1.4rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-    table { width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
-    th, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--border); }
-    th { background: rgba(56, 189, 248, 0.1); color: var(--accent); font-weight: 600; }
-    tr:hover { background: rgba(255,255,255,0.03); }
-    .rank { font-weight: 700; color: var(--accent); width: 50px; }
-    .project-name { font-weight: 600; }
-    .project-name a { color: var(--text); text-decoration: none; }
-    .project-name a:hover { color: var(--accent); }
-    .stars { color: #fbbf24; font-weight: 600; white-space: nowrap; }
-    .desc { color: var(--text-secondary); font-size: 0.9rem; }
-    .insights { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
-    .insights ul { list-style: none; }
-    .insights li { padding: 10px 0; border-bottom: 1px solid var(--border); }
-    .insights li:last-child { border-bottom: none; }
-    .insights strong { color: var(--accent); }
-    footer { border-top: 1px solid var(--border); padding: 30px 0; text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
-    .stats-bar { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
-    @media (max-width: 768px) { h1 { font-size: 1.5rem; } table { font-size: 0.85rem; } th, td { padding: 10px; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub AI 热榜简报 - 2026-06-11</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f9; }
+        h1 { color: #2c3e50; text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .date { text-align: center; color: #7f8c8d; margin-bottom: 30px; }
+        .project-card { background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 15px; padding: 15px; transition: transform 0.2s; }
+        .project-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        .project-header { display: flex; justify-content: space-between; align-items: center; }
+        .project-name { font-size: 1.2em; font-weight: bold; color: #2980b9; text-decoration: none; }
+        .project-tag { font-size: 0.8em; background: #e1f5fe; color: #0288d1; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+        .project-desc { margin-top: 10px; color: #555; font-size: 0.95em; }
+        .footer { text-align: center; margin-top: 30px; font-size: 0.8em; color: #95a5a6; }
+    </style>
+<style>
+.ai-trending-portal-nav { background: #0f172a; border-bottom: 1px solid #334155; padding: 12px 20px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+.ai-trending-portal-nav a { color: #38bdf8; text-decoration: none; font-size: 0.95rem; font-weight: 600; }
+.ai-trending-portal-nav a:hover { text-decoration: underline; }
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="nav"><div class="logo">🔥 AI Trending</div><a href="../index.html">← 返回首页</a></div>
-      <h1>GitHub AI 热榜 — 2026-06-11（周四）</h1>
-      <p class="subtitle">数据来源：GitHub Trending（历史归档）</p>
-    </div>
-  </header>
-  <main class="container">
-    <section class="section">
-      <div class="section-title">🐍 Python 赛道</div>
-      <table><thead><tr><th>排名</th><th>项目</th><th>简介</th><th>今日 Star</th><th>总 Star</th></tr></thead><tbody>
-<tr><td class="rank">1</td><td class="project-name"><a href="https://github.com/langchain-ai/langchain" target="_blank">langchain-ai/langchain</a></td><td class="desc"></td><td class="stars">—</td><td>—</td></tr>
-<tr><td class="rank">2</td><td class="project-name"><a href="https://github.com/All-Hands-AI/OpenHands" target="_blank">All-Hands-AI/OpenHands</a></td><td class="desc"></td><td class="stars">—</td><td>—</td></tr>
-<tr><td class="rank">3</td><td class="project-name"><a href="https://github.com/FoundationAgents/MetaGPT" target="_blank">FoundationAgents/MetaGPT</a></td><td class="desc"></td><td class="stars">—</td><td>—</td></tr>
-<tr><td class="rank">4</td><td class="project-name"><a href="https://github.com/anomalyco/opencode" target="_blank">anomalyco/opencode</a></td><td class="desc"></td><td class="stars">—</td><td>—</td></tr>
-<tr><td class="rank">5</td><td class="project-name"><a href="https://github.com/microsoft/autogen" target="_blank">microsoft/autogen</a></td><td class="desc"></td><td class="stars">—</td><td>—</td></tr>
-<tr><td class="rank">6</td><td class="project-name"><a href="https://github.com/openai/codex" target="_blank">openai/codex</a></td><td class="desc"></td><td class="stars">—</td><td>—</td></tr>
-<tr><td class="rank">7</td><td class="project-name"><a href="https://github.com/crewAIInc/crewAI" target="_blank">crewAIInc/crewAI</a></td><td class="desc"></td><td class="stars">—</td><td>—</td></tr>
-<tr><td class="rank">8</td><td class="project-name"><a href="https://github.com/cursor/cursor" target="_blank">cursor/cursor</a></td><td class="desc"></td><td class="stars">—</td><td>—</td></tr>
-<tr><td class="rank">9</td><td class="project-name"><a href="https://github.com/microsoft/JARVIS" target="_blank">microsoft/JARVIS</a></td><td class="desc"></td><td class="stars">—</td><td>—</td></tr>
-<tr><td class="rank">10</td><td class="project-name"><a href="https://github.com/deepset-ai/haystack" target="_blank">deepset-ai/haystack</a></td><td class="desc"></td><td class="stars">—</td><td>—</td></tr>
-      </tbody></table>
-    </section>
-    <section class="section">
-      <div class="section-title">📘 TypeScript 赛道</div>
-      <table><thead><tr><th>排名</th><th>项目</th><th>简介</th><th>今日 Star</th><th>总 Star</th></tr></thead><tbody>
+<div class="ai-trending-portal-nav"><a href="../index.html">← 返回 AI Trending 门户</a></div>
 
-      </tbody></table>
-    </section>
-    <section class="section">
-      <div class="section-title">💡 今日洞察</div>
-      <div class="insights"><ul>
-<li>暂无详细洞察。</li>
-      </ul></div>
-    </section>
-  </main>
-  <footer>
-    <div class="container">
-      <p>AI Trending 门户 · 每日追踪 GitHub AI 项目趋势</p>
-      <div class="stats-bar">
-        <span>📊 <a href="https://daniel-hwang.goatcounter.com/" target="_blank">访问统计</a></span>
-        <span>🔗 <a href="https://daniel-hwang.github.io/bci-news/" target="_blank">BCI News</a></span>
-        <span>👁 累计访问 <span id="busuanzi_value_site_pv">-</span></span>
-        <span>👥 总访客 <span id="busuanzi_value_site_uv">-</span></span>
-      </div>
-      <p style="margin-top:15px; font-size:0.8rem;">报告时间：2026-06-11 12:00（Asia/Shanghai）</p>
+    <h1>🚀 GitHub AI 热榜简报</h1>
+    <div class="date">2026年6月11日 | 由 TINA 自动生成</div>
+
+    <div class="project-card">
+        <div class="project-header">
+            <a href="https://github.com/langchain-ai/langchain" class="project-name">LangChain</a>
+            <span class="project-tag">AI Agents</span>
+        </div>
+        <div class="project-desc">目前最流行的 AI Agent 构建框架，提供强大的链式调用和内存管理能力。</div>
     </div>
-  </footer>
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="project-card">
+        <div class="project-header">
+            <a href="https://github.com/All-Hands-AI/OpenHands" class="project-name">OpenHands</a>
+            <span class="project-tag">Coding Agents</span>
+        </div>
+        <div class="project-desc">强大的开源代码智能体，旨在通过自主协作完成复杂的软件工程任务。</div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-header">
+            <a href="https://github.com/FoundationAgents/MetaGPT" class="project-name">MetaGPT</a>
+            <span class="project-tag">AI Agents</span>
+        </div>
+        <div class="project-desc">将软件公司 SOP 引入 AI Agent，实现多角色协作完成从需求到代码的全流程。</div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-header">
+            <a href="https://github.com/anomalyco/opencode" class="project-name">OpenCode</a>
+            <span class="project-tag">Coding Agents</span>
+        </div>
+        <div class="project-desc">新兴的终端 AI 编码工具，专注于高性能的上下文理解和代码补全。</div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-header">
+            <a href="https://github.com/microsoft/autogen" class="project-name">AutoGen</a>
+            <span class="project-tag">AI Agents</span>
+        </div>
+        <div class="project-desc">微软推出的多智能体对话框架，支持高度可定制的 Agent 协作模式。</div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-header">
+            <a href="https://github.com/openai/codex" class="project-name">Codex</a>
+            <span class="project-tag">Coding Agents</span>
+        </div>
+        <div class="project-desc"> OpenAI 的代码生成模型及其生态工具，定义了现代 AI 编程的基准。</div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-header">
+            <a href="https://github.com/crewAIInc/crewAI" class="project-name">crewAI</a>
+            <span class="project-tag">AI Agents</span>
+        </div>
+        <div class="project-desc">专注于角色驱动的协同工作流，让多个 AI Agent 像一个团队一样工作。</div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-header">
+            <a href="https://github.com/cursor/cursor" class="project-name">Cursor</a>
+            <span class="project-tag">Coding Agents</span>
+        </div>
+        <div class="project-desc">目前口碑最好的 AI 驱动代码编辑器，深度集成 LLM 提升编程效率。</div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-header">
+            <a href="https://github.com/microsoft/JARVIS" class="project-name">JARVIS</a>
+            <span class="project-tag">AI Agents</span>
+        </div>
+        <div class="project-desc">微软探索的高级个人助手 Agent，旨在跨应用执行复杂指令。</div>
+    </div>
+
+    <div class="project-card">
+        <div class="project-header">
+            <a href="https://github.com/deepset-ai/haystack" class="project-name">Haystack</a>
+            <span class="project-tag">LLM Tools</span>
+        </div>
+        <div class="project-desc">企业级 RAG 框架，专注于构建可扩展的搜索和问答系统。</div>
+    </div>
+
+    <div class="footer">
+        Generated by TINA 👾 | Data sourced from GitHub & OSSInsight
+    </div>
+
+<script data-goatcounter="https://daniel-hwang.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>
